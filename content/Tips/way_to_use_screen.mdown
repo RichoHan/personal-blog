@@ -1,0 +1,47 @@
+Title: screen 用法
+Date: 2014-05-20 21:39
+Author: Richo
+Tags: Unix, screen
+Category: Tips
+Summary: Using screen to run process in background
+
+###前言
+發現比nohup更好用的背景執行工具了0.0  
+
+***
+
+###Using screen
+執行方式  
+
+	# 在terminal輸入  
+	screen  <==執行後會跳至新視窗  
+
+###Hotkeys
+
+	# 新增screen  
+	CTRL+a,c  
+	# 切換至下個screen  
+	CTRL+a,n  
+	# 切換至前一個screen  
+	CTRL+a,a  
+	# 查看目前有幾個screen  
+	CTRL+a,w  
+	# 離開screen  
+	CTRL+a,d  
+	# 刪除screen  
+	exit  
+	or  
+	CTRL+a,k  
+
+###查看目前screen status
+
+	screen -ls  
+
+###回到screen
+
+	screen -r  
+
+***
+
+###Reference
++[Linux command: screen](http://go-linux.blogspot.tw/2007/12/liunx-command-screen.html)

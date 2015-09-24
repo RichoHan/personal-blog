@@ -1,0 +1,108 @@
+Title: Database Migration in Django
+Date: 2013-12-02 01:10
+Author: Richo
+Tags: Django, South, Python
+Category: Web Development
+Summary: Database Migration in Django
+
+###前言
+沒設計好資料庫結構，每次有新的需求，都會有點麻煩，這次來記錄一下south的使用方式~"~  
+
+###安裝
+apt-get：  
+
+	> apt-get install python-django-south
+
+或是使用easy_install來安裝：  
+
+	> easy_install South
+
+或是到這裡，直接下載整個壓縮檔，解壓縮之後進到該目錄裡，執行：  
+	> python setup.py install
+
+請注意，使用apt-get或是easy_install可能都會需要root權限!  
+
+安裝完成之後，請把south加入到專案的INSTALLED_APPS裡：  
+
+	INSTALLED_APPS = (  
+	    'django.contrib.auth',  
+	    'django.contrib.contenttypes',  
+	    'django.contrib.sessions',  
+	    'django.contrib.sites',  
+	    'django.contrib.messages',  
+	    'django.contrib.staticfiles',  
+	    # Uncomment the next line to enable the admin:  
+	    'django.contrib.admin',  
+	    # Uncomment the next line to enable admin   documentation:  
+	    # 'django.contrib.admindocs',  
+	    'author',  
+	    'south',  
+	)  
+
+再來請執行一次syncdb，Django會幫你產生一個資料表south_migrationhistory，用來紀錄Migration的歷史紀錄：  
+
+	> python manage.py syncdb  
+	Syncing...  
+	Creating tables ...  
+	Creating table south_migrationhistory  
+	Installing custom SQL ...  
+	Installing indexes ...  
+	No fixtures found.  
+
+	Synced:  
+	 > django.contrib.auth  
+	 > django.contrib.contenttypes  
+	 > django.contrib.sessions  
+	 > django.contrib.sites  
+	 > django.contrib.messages  
+	 > django.contrib.staticfiles  
+	 > django.contrib.admin  
+	 > author  
+	 > south  
+
+	Not synced (use migrations):  
+***
+
+###使用
+
+如果要把之前建好的author這個app加進Migration裡：  
+
+	> python manage.py convert_to_south author
+
+然後你會發現在author資料夾裡面多了一個叫做migrations的目錄，裡面放了一個0001_initial.py。  
+
+接下來，當你在Model做任何欄位修改之後，只要執行這行：  
+
+	> python manage.py schemamigration author  add_mobile_column --auto  
+
+它就會幫你找出你做了哪些欄位上的修改。如果你的欄位沒有指定預設值並且不允許NULL的話，過程中south會問你一些問題，請你指定預設值給它。順利的話，它應該會在migrations資料夾底下產生一個0002_add_mobile_column.py。  
+
+但做到這裡並還沒有正式的修改到資料庫，接下來請執行python manage.py migrate：  
+
+	> python manage.py migrate  
+	Running migrations for author:  
+ 	- Migrating forwards to 0002_add_mobile_column.  
+ 	> author:0002_add_mobile_column  
+ 	- Loading initial data for author.  
+	No fixtures found.  
+
+這樣就會把剛剛做的異動正式寫入資料庫了。  
+***
+
+###回復
+
+前面提到，資料庫有做Migration最大的好處就是隨時可以回到某一個版本，例如我們想要回到最一開始的版本的話：  
+
+	> python manage.py migrate author 0001  
+	- Soft matched migration 0001 to 0001_initial.  
+	Running migrations for author:  
+	- Migrating backwards to just after 0001_initial.  
+	< author:0003_change_table_name  
+	< author:0002_add_mobile_column  
+
+這樣就搞定了，跟手動修改資料欄位比較起來，方便許多。  
+
+***
+
+###Reference
++[在Django裡做Database Migration](http://blog.eddie.com.tw/2011/10/19/django-db-migration-with-south/)

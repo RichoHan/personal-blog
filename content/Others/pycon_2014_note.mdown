@@ -1,0 +1,47 @@
+Title: PyCon 2014
+Date: 2014-06-24 01:41
+Author: Richo
+Tags: PyCon, Python
+Category: Others
+Summary: Notes for PyCon 2014
+
+###前言
+實在是事情太多了，拖了快一個月才記錄Orz  
+
+***
+
+###Keynote - Wes McKinney
+-[nbviewer](http://nbviewer.ipython.org)  
+-[PyData](http://pydata.org/)  
+-[Pandas](http://pandas.pydata.org/)  
+-[Seaborn: statistical data visualization](http://www.stanford.edu/~mwaskom/software/seaborn/)  
+-[scikit-learn](http://scikit-learn.org/stable/)  
+
+###立委投票指南 -- 從零開始
+-[npm-zhutil](https://github.com/victorhsieh/npm-zhutil)  
+-[The Popolo Project](http://popoloproject.com/)  
+
+###Python to LiveScript
+-[Livescript](http://livescript.net/)  
+
+###Graph-Tool: The Efficient Network Analyzing Tool for Python
+-[Graph-Tool](http://graph-tool.skewed.de/)  
+-[Not easy to install on Mac OS X O_Q]  
+-[Pickle](https://docs.python.org/2/library/pickle.html)  
+
+
+###小海嚴選
+-[django-rest-framework](http://www.django-rest-framework.org/)  
+-[django-social-auth]  
+-[thumbor + CDN]  
+-[HUBOT](https://hubot.github.com/)  
+
+###Keynote - Jessica
+-[Build mobile apps in Python]  
+-[Kivy](http://kivy.org/#home)  
+-[Pypy]  
+-[openHatch](https://openhatch.org/)  
+
+###用Python建立自己的Summly
+-[NLTK]  
+-[結巴中文分詞 - Jieba]  

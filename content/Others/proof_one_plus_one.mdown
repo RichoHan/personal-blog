@@ -1,0 +1,130 @@
+Title: 證明1+1=2
+Date: 2013-12-05 12:56
+Author: Richo
+Tags: math, logic
+Category: Others
+Summary: Prove that one plus one equals to two
+
+###前言-為什麼我要證明1+1=2
+就是想紀念一下活到2X歲，終於學會如何證明1+1=2...XD
+
+###目標
+目標：1+1=2  
+步驟：定義正整數 -> 證明定理一 -> 證明定理二 -> 定義「＋」(定理三) -> 證明目標  
+
+###定義正整數
+Consider a collection of objects called natural number. One of the natural numbers is called zero and denoted by 0. For every natural number x, one of the natural numbers is called the successor of x and denoted by x\*.  
+  
+The set of natural numbers is assumed to satisfy the following axioms:  
+>- (A1) x\* ≠ 0 for every natural number x  
+>- (A2) If x\* = y\*, then x = y  
+>- (A3) (Induction) Let A be a set of natural numbers with the following properties:  
+>>1. 0 belongs to A  
+>>2. If x belongs to A, then x* belongs to A  
+Then A contains all natural numbers.  
+  
+Definition  
+>- 1 = 0\*, 2 = 1\*, 3 = 2\*, 4 = 3\*  
+>- x = y <--> y = x, x ≠ y <--> y ≠ x  
+
+***
+
+###證明定理一
+####If x = y, then x\* = y\*.  
+#####Proof
+	
+	Let A = {x|if x = y, then x* = y* for some y}
+	(i)	0 ∈ A:
+		Let y = 0
+		Since 0 = 0, then 0* = 1 & 1 = 0*, so 0 ∈ A.
+	(ii)Assume x ∈ A,
+		By RAA, assume x* ∉ A
+		Logic in A:		(ey)(x = y->x* = y*)
+		Logic not in A:	-(ey)(x = y->x* = y*) = (y)(x = y and x* ≠ y*)
+		x* ∉ A: (y)((x *= y).-((x*)* = y*))
+				x* = y
+				-((x*)* = y*) = -(y* = y*)
+				y* ≠ y*, conflict.
+		So, x* ∈ A.
+	By (i), (ii) & A3, A contains all natural numbers.
+	Hence, if x = y, then x* = y* for all natural numbers.
+
+***
+
+###證明定理二
+####For every x, there exists a unique function f from natural numbers to natural numbers such that f(0) = x, f(y\*) = f(y)\* for all y.  
+  
+#####Proof
+*Existence:*  
+	
+	Let A = {x|there exist a function f such that f(0)=x, and f(y*) = f(y)* for all y}
+	(i)	0 ∈ A:
+		1.	By taking f(y) = y for all y, f(0) = 0.
+		2.	f(y*) = y* (by definition of f)
+			f(y)* = y* (by Theorem 1) => f(y*) = f(y)*
+			So, 0 ∈ A.
+	(ii)Assume x ∈ A,
+		Define g(y) = f(y)* for all y, then g(0) = f(0)* = x*
+		g(y*) = f(y*)* = (f(y)*)* = g(y)*
+		Hence, if x ∈ A, then x* ∈ A.
+	By (i), (ii) & A3, A contains all natural numbers.
+
+*Uniqueness:*  
+	
+	Let g be another N->N such that g(0) = x and g(y*) = g(y)*
+	Let A = {y|f(y)=g(y)}
+	(i)	0 ∈ A:
+		Since f(0) = x and g(0) = x, f(0) = g(0).
+	(ii)Assume y ∈ A,
+		f(y) = g(y) (by definition of A)
+		f(y)* = g(y)* (by Theorem 1)
+		f(y)* = f(y*), g(y)* = g(y*)
+		So, f(y*) = g(y*)
+		So, y* ∈ A.
+	By (i), (ii) & A3, A contains all natural numbers.
+	Hence f(y) = g(y) for all natural numbers.
+
+***
+
+###定義「＋」-定理三
+####To every pair of numbers x, y, we can assign a natural number x + y so that (a) x + 0 = x, (b) x + y\* = (x + y)\*  
+  
+#####Proof
+	
+	For every x, we can rewrite
+		1. x + 0 = x
+		2. x + y* = (x + y)* for all y
+	as
+		1. fx(0) = x
+		2. fx(y*) = f(y)* for all y
+	By Theorem 2, there is exactly one unique function fx() satisfy
+		1. fx(0) = x
+		2. fx(y*) = f(y)* for all y
+	Since this is true for every x, we can assign a natural number x + y in exactly one way.
+
+***
+
+###證明目標
+到這邊已經簡單許多  
+####１＋１＝２
+	
+	1 + 1 = 1 + 0*
+		  = (1 + 0)*
+		  = (1)* (by Theorem 3-1)
+		  = 2
+
+####２＋２＝４
+沒用到Theorem 3-2，再證個2+2=4
+	
+	2 + 2 = 2 + 1*
+		  = (2 + 1)* (by Theorem 3-2)
+		  = (2 + 0*)*
+		  = ((2 + 0)*)* (by Theorem 3-2)
+		  = (2*)* (by Theorem 3-1)
+		  = 3*
+		  = 4
+
+***
+
+###Reference
++俊堯大大的AML講義

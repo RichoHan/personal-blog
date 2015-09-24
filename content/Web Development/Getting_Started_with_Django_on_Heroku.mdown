@@ -1,0 +1,228 @@
+Title: 部署 Django 到 Heroku
+Date: 2014-03-28 18:23
+Author: Richo
+Tags: Django, Heroku, Python
+Category: Web Development
+Summary: A tutorial about how to get Django work on Heroku
+
+###前言
+總算是買了自己的域名 richo.tw ，有趣的是韓政憲.tw跟韓政憲.台灣竟然被買走了...可惡的線上名片網站= =+  
+要來找免費的虛擬主機，用Django查到有人推薦Heroku，看到界面風格忍不住就用了XD  
+
+###前置作業
++Python  
++Virtualenv, see [guide](http://install.python-guide.org/)  
++[Postgres](http://www.postgresql.org)  
++申請Heroku帳號  
+
+###建立Virtualenv
+先建立最外層的project資料夾
+
+	$ mkdir hellodjango && cd hellodjango  
+
+建立及啟動虛擬環境
+
+	$ virtualenv venv  
+	$ source venv/bin/activate  
+
+接著用pip裝application的dependencies，其中要裝的是django-toolbelt，包含：  
++Django (the web framework)  
++Gunicorn (WSGI server)  
++dj-database-url (a Django configuration helper)  
++dj-static (a Django static file server)  
+
+	$ pip install django-toolbelt  
+	Installing collected packages: Django, psycopg2, gunicorn, dj-database-url, dj-static, static  
+		...  
+	Successfully installed Django psycopg2 gunicorn dj-database-url dj-static static  
+	Cleaning up...  
+
+建立Django appilcation  
+P.S.別忘記最後的那個「.」  
+
+	django-admin.py startproject hellodjango .
+
+###用Procfile宣告process type
+在application的root目錄建立Procfile，加入：
+
+	web: gunicorn hellodjango.wsgi  
+
+接著執行
+
+	$ foreman start  
+	2013-04-03 16:11:22 [8469] [INFO] Starting gunicorn 0.17.2  
+	2013-04-03 16:11:22 [8469] [INFO] Listening at: http://127.0.0.1:8000 (8469)  
+
+###用Pip指定dependencies
+
+	$ pip freeze > requirements.txt
+
+它會製作出requirements.txt，內含：
+
+	Django==1.6  
+	dj-database-url==0.2.2  
+	dj-static==0.0.5  
+	gunicorn==18.0  
+	psycopg2==2.5.1  
+	static==0.4  
+	wsgiref==0.1.2  
+
+###Django設定
+將以下內容加入setting.py  
+
+	# Parse database configuration from $DATABASE_URL  
+	import dj_database_url  
+	DATABASES['default'] =  dj_database_url.config()  
+
+	# Honor the 'X-Forwarded-Proto' header for request.is_secure()  
+	SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  
+
+	# Allow all host headers  
+	ALLOWED_HOSTS = ['*']  
+
+	# Static asset configuration  
+	import os  
+	BASE_DIR = os.path.dirname(os.path.abspath(__file__))  
+	STATIC_ROOT = 'staticfiles'  
+	STATIC_URL = '/static/'  
+
+	STATICFILES_DIRS = (  
+	    os.path.join(BASE_DIR, 'static'),  
+	)  
+
+將以下內容加入wsgi.py  
+
+	from django.core.wsgi import get_wsgi_application  
+	from dj_static import Cling  
+
+	application = Cling(get_wsgi_application())  
+
+###Git
+建立.gitignore，寫入：  
+
+	venv  
+	*.pyc  
+	staticfiles  
+
+建立新的git repository來存放application  
+
+	$ git init  
+	Initialized empty Git repository in /Users/kreitz/hellodjango/.git/  
+	$ git add .  
+	$ git commit -m "my django app"  
+	[master (root-commit) 2943412] my django app  
+	 7 files changed, 230 insertions(+)  
+	 create mode 100644 .gitignore  
+	 create mode 100644 Procfile  
+	 create mode 100644 hellodjango/__init__.py  
+	 create mode 100644 hellodjango/settings.py  
+	 create mode 100644 hellodjango/urls.py  
+	 create mode 100644 hellodjango/wsgi.py  
+	 create mode 100644 manage.py  
+	 create mode 100644 requirements.txt  
+
+###Deploy到Heroku
+先用Heroku指令建立新專案  
+
+	$ heroku create  
+	Creating simple-spring-9999... done, stack is cedar  
+	http://simple-spring-9999.herokuapp.com/ | git@heroku.com:simple-spring-9999.git  
+	Git remote heroku added  
+
+用git push來deploy application  
+
+	$ git push heroku master  
+	Counting objects: 11, done.  
+	Delta compression using up to 4 threads.  
+	Compressing objects: 100% (9/9), done.  
+	Writing objects: 100% (11/11), 4.01 KiB, done.  
+	Total 11 (delta 0), reused 0 (delta 0)  
+	-----> Python app detected  
+	-----> No runtime.txt provided; assuming python-2.7.6.  
+	-----> Preparing Python runtime (python-2.7.6)  
+	-----> Installing Distribute (0.6.36)  
+	-----> Installing Pip (1.3.1)  
+	-----> Installing dependencies using Pip (1.3.1)  
+	       Downloading/unpacking Django==1.5 (from -r requirements.txt (line 1))  
+	       ...  
+	       Successfully installed Django psycopg2 gunicorn dj-database-url dj-static static  
+	       Cleaning up...  
+	-----> Collecting static files  
+	       0 static files copied.  
+
+	-----> Discovering process types  
+	       Procfile declares types -> web  
+
+	-----> Compiled slug size is 29.5MB  
+	-----> Launching... done, v6  
+	       http://simple-spring-9999.herokuapp.com deployed to Heroku  
+
+	To git@heroku.com:simple-spring-9999.git  
+	* [new branch]      master -> master  
+
+###Dyno設定
+確保至少一個dyno在跑，執行  
+
+	$ heroku ps:scale web=1  
+
+下面指令可用來check dyno的status：  
+
+	$ heroku ps  
+	=== web: `gunicorn hellodjango.wsgi`  
+	web.1: up for 10s  
+
+要用瀏覽器開啟app，直接執行：  
+
+	$ heroku open  
+	Opening simple-spring-9999.herokuapp.com... done  
+
+查看log：  
+
+	heroku logs  
+
+***
+
+###之後要跑Django指令，直接在前面加上heroku run：
+
+	$ heroku run python manage.py syncdb  
+	Running python manage.py syncdb attached to terminal... up, run.1  
+	Creating tables ...  
+	Creating table auth_permission  
+	Creating table auth_group_permissions  
+	Creating table auth_group  
+	Creating table auth_user_groups  
+	Creating table auth_user_user_permissions  
+	Creating table auth_user  
+	Creating table django_content_type  
+	Creating table django_session  
+	Creating table django_site  
+
+	You just installed Django's auth system, which means you don't   have any superusers defined.  
+	Would you like to create one now? (yes/no): yes  
+	Username (leave blank to use 'u53976'): kenneth  
+	Email address: kenneth@heroku.com  
+	Password:  
+	Password (again):  
+	Superuser created successfully.  
+	Installing custom SQL ...  
+	Installing indexes ...  
+	Installed 0 object(s) from 0 fixture(s)  
+
+###使用Django shell
+
+	$ heroku run python manage.py shell  
+	Running python manage.py shell attached to terminal... up, run.1  
+	Python 2.7.6 (default, Jan 16 2014, 02:39:37)  
+	[GCC 4.4.3] on linux2  
+	Type "help", "copyright", "credits" or "license" for more   information.  
+	(InteractiveConsole)  
+	>>> from django.contrib.auth.models import User  
+	>>> User.objects.all()  
+	[<User: kenneth>]  
+
+大功告成！  
+
+***
+
+###Reference
++[Getting Started with Django on Heroku](https://devcenter.heroku.com/articles/getting-started-with-django)  

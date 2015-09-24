@@ -1,0 +1,47 @@
+Title: 替換Pelican主題
+Date: 2013-11-16 01:41
+Author: Richo
+Tags: pelican, bootstrap
+Category: Tools
+Summary: Change pelican theme
+
+###前言-為什麼我要替換Pelican主題
+其實原本的主題也很好看了，[見此頁](https://github.com/getpelican/pelican-themes/tree/master/notmyidea-cms)  
+只是跟現在這個比起來，我更喜歡它的簡潔、清晰，且我日後要再加一些widget也不會太花=)  
+(還可以順便發一篇教學文XD)  
+
+***
+
+### 尋找適合的主題
+
+大家可以到這個網站看pelican的相關布景主題：[Pelican Themes](http://pelicanthemes.com)  
+然後到它的[Pelican Github repository](https://github.com/getpelican/pelican-themes)找到對應資料夾  
+
+先到myblog建立「theme」目錄並複製資料夾，我用的是[pelican-bootstrap3](https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3)  
+
+	mkdir theme  
+	cd theme  
+	git clone https://github.com/DandyDev/pelican-bootstrap3.git  
+
+### 設定主題路徑
+
+接著退出，編輯pelicanconf.py，加入：  
+
+	THEME = 'theme/pelican-bootstrap3'  
+
+然後執行  
+
+	make html  
+
+此時進入output資料夾，將變更後檔案push到github上：  
+
+	git add .  
+	git commit -m "Edit theme"  
+	git push -u origin master  
+
+再回去看你的網站，佈景應該已經變囉，那麼下次再來寫如何做特殊變更，或是大家可以看reference的usage，寫的都蠻清楚的=)  
+
+###Reference
+
++[Pelican Themes](http://pelicanthemes.com)  
++[pelican-bootstrap3](https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3)  

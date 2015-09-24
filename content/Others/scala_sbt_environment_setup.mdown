@@ -1,0 +1,44 @@
+Title: Scala - sbt 環境安裝
+Date: 2014-03-25 19:30
+Author: Richo
+Tags: Scala, sbt
+Category: Others
+Summary: Scala - sbt environment setup
+
+###前言
+OS 介紹： OS X 10.9 Mavericks  
+為了Functional programming安裝sbt, 一開始蠢蠢的看不懂安裝方式，切記勿用homebrew或mac port安裝，版本沒有更新，執行會報錯  
+
+###安裝
+先從[官方網頁](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html#)下載sbt-launch.jar  
+將sbt-launch.jar移到/usr/local/bin  
+
+	mv sbt-launch.jar /usr/local/bin  
+
+撰寫sbt shell script  
+
+	vi /usr/local/bin/sbt
+
+內容如下：  
+
+	SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"  
+	java $SBT_OPTS -jar `dirname $0`/sbt-launch.jar "$@"  
+
+換一下權限  
+
+	chmod u+x ~/bin/sbt  
+
+重開terminal，看一下是否建立好路徑  
+
+	which sbt  
+
+應該會出現
+
+	/usr/local/bin/sbt  
+
+接著直接跑sbt即可使用^^
+
+***
+
+###Reference
++[sbt setup](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html)

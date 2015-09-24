@@ -1,0 +1,195 @@
+Title: Coursera - HCI : Rapid Prototyping(上)
+Date: 2014-02-04 14:40
+Author: Richo
+Tags: HCI, prototyping
+Category: HCI
+Summary: A note of introduction about rapid prototyping on Coursera
+
+###Paper Prototypes and Mockups
+
+####Storyboarding
+Storyboarding是關於任務的  
+IMG
+
+Storyboarding isn’t about “pretty pictures”  
+it’s about communicating ideas  
+不會畫畫根本一點關係都沒有，能以視覺清晰表達想法最重要  
+
+#####Star People
+![Alt text](https://raw.github.com/RichoHan/RichoHan.github.io/master/images/star_people_1.jpg)  
+![Alt text](https://raw.github.com/RichoHan/RichoHan.github.io/master/images/star_people_2.jpg)  
+
+#####Storyboards Should Convey
+-	Setting  
+	-	People involved(人)  
+	-	Environment(地點)  
+	-	Task being accomplished(事件)  
+-	Sequence  
+	-	What steps are involved?(無需對界面做詳細展示，但是要展示界面扮演的角色)  
+	-	What leads someone to use the app?  
+	-	What task is being illustrated?  
+-	Satisfaction  
+	-	What’s motivates people to use this system?  
+	-	What does it enable people to accomplish?  
+	-	What need does the system fill?  
+
+#####Benefits of Storyboarding  
+-	Holistic focus: Helps emphasize how an interface accomplishes a task  
+-	Avoids commitment to a particular user interface (no buttons yet)  
+-	Helps get all the stakeholders on the same page in terms of the goal  
+
+Time Limits Help
+
+####Creating Paper Prototyping
+![Alt text](https://raw.github.com/RichoHan/RichoHan.github.io/master/images/Creating_Paper_Prototyping.jpg)  
+
+#####6 Paper Prototyping Tips & Tricks
+1.	Keep all your materials in one place! Small interface widgets tend to get lost or damaged easily(集中材料)  
+2.	Work quickly and make reusable components (buttons, etc)(重複利用原件)  
+3.	If something is difficult to simulate (progress indicators, right mouse menus, hyperlinks), have the user ask if it is available and then verbally describe the interaction  
+4.	Backgrounds (11”x14” poster board) can be useful to contain the prototype and provide context for the user  
+5.	Don’t be afraid to mix and match hardware and software! for instance, if size constraints are important, you might want to make a blinder using a photograph of the device that would be used and manipulate the prototype within the frame  
+6.	When appropriate, add context by including familiar operating system elements  
+
+#####Get Creative with Materials
+-	Widgets: Paper, Cardboard, Transparencies  
+-	Connectors: Tape, Glue, Rubber Cement  
+-	Drawing: Pens, Pencils, Markers  
+-	...and more  
+
+#####Lifalyze Video  
+<iframe width="420" height="315" src="//www.youtube.com/embed/J-bVzUahNIg" frameborder="0" allowfullscreen></iframe>
+
+####Testing Paper prototyping
+
+#####Try Prototypes with People
+-	Need a picture  
+-	Test multiple  
+-	Emphasis on conversation  
+嘗試做多樣化的模型很重要，是得到user更有價值的反饋的方法。  
+
+Get users (and other stakeholders) to help design. Scaffold their efforts  
+直接給他們一支筆，參與設計，更改界面。  
+
+####Digital Mock-ups
+![Alt text](https://raw.github.com/RichoHan/RichoHan.github.io/master/images/Digital_Mock-ups.jpg)  
+當要討論細節和更精確的東西時，digital mock-up就派上用場了。  
+
+Beware Inappropriate Fidelity(精確度、保真度)  
+
+#####Form and Feedback Co-evolve
+![Alt text](https://raw.github.com/RichoHan/RichoHan.github.io/master/images/Form_and_Feedback_Coevolve.png)  
+隨著模型的真實率越高，團隊會更有機會去嘗試更正式的實驗技術。  
+
+####Reference
++[Paper Prototypes and Mockups](https://class.coursera.org/hci-003/lecture/21)  
++[Bill Buxton, Sketching User Experiences]  
++[Bill Moggridge, Designing Interactions]  
++[Carolyn Snyder, Paper Prototyping]  
++[Michael Schrage, Serious Play]  
++[Houde and Hill, What do Prototypes Prototype?]  
++[Todd Zaki Warfel, Prototyping]  
+
+***
+
+###Faking it - Wizard of Oz
+
+####Wizard-Of-Oz Prototyping
+Simulates machine behavior with human operators  
+
+####Wizard of Oz Technique
+-	Make an interactive application without (much) code  
+	-	Front end interface  
+	-	(Remote) wizard controls user interface  
+	-	Makes sense when it’s faster/cheaper/easier than making real thing  
+-	Get feedback from users people  
+	-	Hi-fidelity: users think it’s more real  
+	-	Low-fidelity: more license to suggest changes  
+
+“Why Start-Ups Must Pay Attention To What’s Behind The Curtain” Venture Capital Dispatch - WSJ  
+
+####Making a Wizard-Powered Prototype
+-	Map out scenarios and application flow  
+	-	what should happen in response to user behavior?  
+-	Put together interface “skeletons”  
+-	Develop “hooks” for wizard input  
+-	Where and how the wizard will provide input  
+	-	selecting the next screen, entering text, entering a zone, recognizing speech, etc.  
+	-	remember that later you’ll need to replace with computer  
+-	Rehearse wizard role with a colleague  
+
+####Running Wizard-Powered Prototypes
+-	Practice with a friend first  
+-	Once you’re comfortable, recruit “users”  
+-	Two roles: facilitator and wizard.  
+	-	Facilitator provides tasks (paper) and takes notes  
+	-	Wizard operates interface (more authentic if hidden or remote)  
+-	User feedback can be...  
+	-	Think aloud (speak freely as performing tasks)  
+	-	Retrospective追朔 (best when think aloud distracts, video helps)  
+	-	Heuristic evaluation (works with experts too)  
+-	Debrief users (reveal wizard if needed)  
+
+####Advantages of Wizards
+-	Fast (faster) and thus, cheaper and more iterative prototypes  
+-	Creating multiple variations is easy  
+-	More “real” than paper prototyping  
+-	Identifies bugs and problems with current design  
+-	Places the user at the center of development  
+-	Can envision challenging-to-build applications  
+-	Designers learn by playing wizard(我覺得的重要之處)  
+
+####Disadvantages of Wizards
+-	Simulations may misrepresent otherwise imperfect tech  
+-	May simulate technologies that do not exist (and may never)  
+-	Wizards require training and can be inconsistent  
+-	Playing the wizard can be exhausting  
+-	Some features (and limitations) are difficult/impossible to simulate effectively  
+-	May be inappropriate in some venues (e.g., home)  
+
+####Reference
++[Faking it - Wizard of Oz](https://class.coursera.org/hci-003/lecture/22)  
++[Steven Dow](www.cs.cmu.edu/~spdow)  
++[Sketching User Experiences:Getting the Design Right and the Right Design](www.elsevierdirect.com/companion.jsp?ISBN=9780123740373)  
+
+***
+
+###Faking it - Video Prototyping
+
+####Benefits of Video Prototyping
+-	Cheap and fast(我強烈懷疑~"~)
+-	Great communication tools  
+	-	Helps achieve common ground  
+	-	Ideally, portable and self-explanatory  
+-	Can serve as a ‘spec’ for developers  
+-	Ties interface designs to tasks  
+	-	Aligns and orients interface choices  
+	-	Makes sure you have a complete interface  
+	-	And that there’s nothing extra(不做多餘的事)  
+
+####What should the video show?
+-	Like a storyboard, the whole task, including motivation and success  
+	-	Establishing shots and narrative help  
+-	Draw on tasks you’ve observed  
+-	Illustrate important tasks your system enables  
+-	Can help scope a minimum-viableproduct  
+-	Changes what design teams argue about (in a good way)  
+
+####What are the steps?
+-	Like anything, start with an outline (or your storyboards)  
+-	Fine to extemporize  
+-	Equipment  
+	-	a camera. Nothing fancy. Could be a phone, built-in laptop camera...  
+	-	people  
+	-	and a realistic location  
+-	In general, focus on message more than production values  
+
+####Considerations
+-	Can use audio or a silent movie with title cards (audio can be finicky)  
+-	Interface can be paper, mock-ups, code, or invisible (just showing the task)  
+-	Can show both success and failure (of your interfaces and others)  
+-	Edit as little as possible because editing is hugely time-consumng. (In-camera/pause editing is most efficient)  
+
+####Reference
++[Faking it - Video Prototyping](https://class.coursera.org/hci-003/lecture/24)  
++[Wendy Mackay's materials]  

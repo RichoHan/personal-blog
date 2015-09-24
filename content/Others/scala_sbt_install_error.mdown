@@ -1,0 +1,15 @@
+Title: Scala - sbt 手動安裝報錯
+Date: 2014-04-22 18:07
+Author: Richo
+Tags: Scala, sbt
+Category: Others
+Summary: Scala - sbt environment setup problem
+
+###前言
+重裝時一直報錯O_Q(找不到scala/reflect/internal/tree之類的)  
+簡單來說就是舊版本sbt沒把scala-reflect.jar放進去吧，我猜XD  
+
+###Fix
+先從[Scala官方網頁](http://www.scala-lang.org/download/2.10.4.html)下載2.10.4版的scala  
+將其解壓縮，將lib裡面的scala-reflect.jar搬到~/.sbt/boot/scala-2.10.3/lib內  
+再重新執行sbt應該就ok了  

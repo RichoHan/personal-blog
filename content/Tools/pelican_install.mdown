@@ -1,0 +1,109 @@
+Title: 用Pelican + Github Page建立個人部落格
+Date: 2013-11-15 01:20
+Author: Richo
+Tags: pelican, github
+Category: Tools
+Summary: Use pelican & github page to build personal blog
+
+###前言-為什麼我要用Pelican + Github Page建立個人部落格
+其實，更正確來說，我只是想用靜態網頁來做程式碼筆記，以前都是用BBS來記錄，但近年來越來越冷清了，加上架在別人主機上的東西總是很難掌控(<strike>Github明明也是架在別人主機上面</strike>)，在最近看到這篇文章「[搬到Octopress了](http://blog.eddie.com.tw/2011/10/27/move-to-octopress/)」，故想試試看架在github page上面，但Octopress的style我看了實在不太順眼，在找到pelican之後很是喜歡，加上他是用Python撰寫，也許日後可以試試寫些plugin(嘴砲無誤)，於是...就出現這篇了XD
+
+***
+
+### 安裝pelican
+
+OS 介紹： OS X 10.9 Mavericks  
+所需環境： 請先裝好Python(2.7.X, 3.3+)、distribute、pip、virtualenv  
+
+***
+先到你想建立部落格的資料夾下建立虛擬環境  
+
+	virtualenv PelicanEnv --distribute  
+
+啟動虛擬環境  
+
+	source PelicanEnv\bin\activate  
+
+安裝Pelican  
+
+	pip install pelican  
+
+想用Markdown寫文章的話，順便安裝Markdown  
+
+	pip install Markdown  
+
+### 建立Blog
+
+先建立目錄  
+
+	mkdir myblog  
+	cd myblog  
+
+pelican 快速建立部落格指令  
+
+	pelican-quickstart
+
+***
+P.S.要注意的是，我在執行這行時出現過Error：  
+
+	ValueError: unknown locale: UTF-8
+
+疑似是一些系統的設定檔出錯，也許是OS X升級後的error  
+解決方式可以參見[這篇-Pelican 3.3 pelican-quickstart error](http://stackoverflow.com/questions/19961239/pelican-3-3-pelican-quickstart-error-valueerror-unknown-locale-utf-8)  
+
+***
+
+此時會出現一堆要輸入的設定，我一開始也不懂，就都跟著default設定即可  
+日後可以從pelicanconf.py裡面更改設定  
+
+建立出來的目錄結構：
+>`myblog/`  
+>`├── content              # 存放输入的原始碼`  
+>`│   └── (pages)          # 存放手工建立的靜態頁面`  
+>`├── output               # 生成的输出文件`  
+>`├── develop_server.sh    # 方便開啓測試服務器`  
+>`├── Makefile             # 方便管理部落格的Makefile`  
+>`├── pelicanconf.py       # 主配置文件`  
+>`└── publishconf.py       # 發佈時使用的配置文件`  
+
+### 撰寫文章
+先進入content目錄資料夾，用Markdown語法寫如下文章，副檔名須為.mdown：  
+
+	Title: My super title  
+	Date: 2010-12-03 10:20  
+	Category: Python  
+	Tags: pelican, publishing  
+	Slug: my-super-post  
+	Author: Alexis Metaireau  
+	Summary: Short version for index and feeds  
+
+	This is the content of my super blog post.  
+
+之後推出content目錄(即當前目錄為myblog)，執行  
+
+	make html
+
+此時ouput資料夾下就會根據你之前所有的變動生成對應的html檔。  
+
+###建立Github Page
+
+先在自己的Github帳號之中，新建一個Repositiry  
+Repositiry名字為「xxx.github.io」或「xxx.github.com」
+P.S.xxx要等於你的github帳號的username，我之前失敗就是卡在這  
+
+創好之後到output目錄下，將生好的html檔push到github上  
+
+	cd output  
+	git init  
+	git add .  
+	git commit -m "first commit"  
+	git remote add origin https://github.com/xxx/xxx.github.io.git  
+	git push -u origin master  
+
+等一下之後，到xxx.github.io應該就可以看到你剛剛建立的文章了！(灑花～)  
+P.S.Push上去之後，會過幾分鐘才看到文章更新，這是正常現象。  
+
+###Reference
+
++[Pelican官方網頁](http://docs.getpelican.com/en/3.3.0/)  
++[用 Pelican 和 GitHub Pages 搭建免费的个人博客](http://www.dongxf.com/3_Build_Personal_Blog_With_Pelican_And_GitHub_Pages.html)

@@ -1,0 +1,34 @@
+Title: 設定 OS X Terminal 下的 .bashrc
+Date: 2014-03-09 14:49
+Author: Richo
+Tags: OS X, bashrc
+Category: Others
+Summary: Setting .bashrc under OS X terminal
+
+###前言
+最近設定虛擬環境一直出現路徑問題，整理一下以便之後查詢  
+作業系統OS X 10.9.2  
+
+***
+
+###當家(~/)目錄下沒有bash相關檔時：
+建立.bash_profile檔案，內容如下：  
+
+	if [ -f ~/.bashrc ]; then  
+    	source ~/.bashrc  
+	fi  
+
+之後再把路徑寫到.bashrc內，沒有的話自己創。  
+
+###.bash_profile 與 .bashrc 的差別：  
+
+####.bash_profile  
+輸入帳號密碼登入時，不論遠端或本地，都會執行此設定檔。  
+
+####.bashrc  
+在已經登入的情況下，開啟終端機視窗（如 Gnome 的 xterm），在命令提示符號出現前，就會先執行 .bashrc 內的指令。  
+
+***
+
+###Reference
++[設定 Mac Terminal 下的 .bashrc](http://coder.aqualuna.me/2012/03/bashrc-in-mac-terminal-os-x-lion.html)

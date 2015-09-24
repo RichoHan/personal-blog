@@ -1,0 +1,33 @@
+Title: 用Homebrew裝MySQL時的問題整理與解決方法
+Date: 2014-03-10 22:35
+Author: Richo
+Tags: OS X, MySQL
+Category: Others
+Summary: Fixing problem when install MySQL using Homebrew
+
+###前言
+作業系統OS X 10.9.2  
+
+***
+
+###Fixing Errors
+當執行  
+
+	mysql.server start
+
+出現  
+
+	“ERROR! The server quit without updating PID file”.  
+
+執行下列指令：  
+
+	$ sudo chmod -R 755 /usr/local/var/mysql  
+	$ rm -Rf /usr/local/var/mysql/Your-Machine-Name.local.err    
+
+原因大概是因為檔案權限不夠，造成一些服務無法開啟。  
+另外.err檔也一定要刪掉，否則一樣會出現Error Message。  
+
+***
+
+###Reference
++[HOW TO INSTALL MYSQL ON MAC OS X USING HOMEBREW](http://benjsicam.me/blog/how-to-install-mysql-on-mac-os-x-using-homebrew-tutorial/)

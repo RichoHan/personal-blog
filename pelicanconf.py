@@ -50,6 +50,7 @@ NEST_SITEMAP_ATOM_LINK = u'Atom Feed'
 NEST_SITEMAP_RSS_LINK = u'RSS Feed'
 NEST_SOCIAL_COLUMN_TITLE = u'Social'
 SOCIAL = [
+    ('Richo.tw', 'http://richo.tw/'),
     ('Github', 'https://github.com/richohan')
 ]
 NEST_LINKS_COLUMN_TITLE = u'Links'
@@ -57,7 +58,7 @@ NEST_COPYRIGHT = u'&copy; Richo 2015'
 
 # index.html
 NEST_INDEX_HEAD_TITLE = u'Homepage'
-NEST_INDEX_HEADER_TITLE = u'Note for Richo'
+NEST_INDEX_HEADER_TITLE = u'Hi, this is Richo'
 NEST_INDEX_HEADER_SUBTITLE = u'Journal for coding stuff'
 NEST_INDEX_CONTENT_TITLE = u'Last Updates'
 

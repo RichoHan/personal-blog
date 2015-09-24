@@ -38,6 +38,7 @@ DEFAULT_PAGINATION = 10
 THEME = "themes/nest"
 # Add items to top menu before pages
 MENUITEMS = [('Homepage', '/'), ('Categories', '/categories.html')]
+NEST_HEADER_IMAGES = '/cover.jpg'
 
 # Footer
 NEST_SITEMAP_COLUMN_TITLE = u'Sitemap'
@@ -54,10 +55,13 @@ SOCIAL = [
     ('Github', 'https://github.com/richohan')
 ]
 NEST_LINKS_COLUMN_TITLE = u'Links'
+LINKS = [
+    ('Pelican', 'http://blog.getpelican.com')
+]
 NEST_COPYRIGHT = u'&copy; Richo 2015'
 
 # index.html
-NEST_INDEX_HEAD_TITLE = u'Homepage'
+NEST_INDEX_HEAD_TITLE = u''
 NEST_INDEX_HEADER_TITLE = u'Hi, this is Richo'
 NEST_INDEX_HEADER_SUBTITLE = u'Journal for coding stuff'
 NEST_INDEX_CONTENT_TITLE = u'Last Updates'

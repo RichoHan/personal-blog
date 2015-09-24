@@ -1,7 +1,7 @@
 Title: Coursera - HCI : Needfinding
 Date: 2014-02-02 14:25
 Author: Richo
-Tags: HCI, needfinding
+Tags: hci, needfinding
 Category: HCI
 Summary: A note of introduction about needfinding on Coursera
 

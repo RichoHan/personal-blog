@@ -1,7 +1,7 @@
 Title: 用Homebrew裝MySQL時的問題整理與解決方法
 Date: 2014-03-10 22:35
 Author: Richo
-Tags: OS X, MySQL
+Tags: os x, mysql
 Category: Others
 Summary: Fixing problem when install MySQL using Homebrew
 

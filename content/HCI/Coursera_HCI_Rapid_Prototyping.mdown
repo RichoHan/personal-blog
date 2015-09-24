@@ -1,7 +1,7 @@
 Title: Coursera - HCI : Rapid Prototyping(上)
 Date: 2014-02-04 14:40
 Author: Richo
-Tags: HCI, prototyping
+Tags: hci, prototyping
 Category: HCI
 Summary: A note of introduction about rapid prototyping on Coursera
 

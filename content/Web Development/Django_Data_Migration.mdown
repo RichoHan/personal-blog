@@ -1,7 +1,7 @@
 Title: Database Migration in Django
 Date: 2013-12-02 01:10
 Author: Richo
-Tags: Django, South, Python
+Tags: django, south, python
 Category: Web Development
 Summary: Database Migration in Django
 

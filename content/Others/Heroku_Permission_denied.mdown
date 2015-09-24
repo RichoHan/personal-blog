@@ -1,16 +1,16 @@
-Title: Heroku - 'Permission denied (publickey) fatal: Could not read from remote repository' 
+Title: Heroku - 'Permission denied (publickey) fatal: Could not read from remote repository'
 Date: 2014-03-29 17:00
 Author: Richo
-Tags: Django, Heroku, Git
+Tags: django, heroku, git
 Category: Others
 Summary: Fix Heroku problem
 
 ####First create a key
-	
+
 	ssh-add ~/.ssh/id_rsa  
 
 ####Confirm it's been added to the known list of keys
-	
+
 	ssh-add -l  
 
 ***

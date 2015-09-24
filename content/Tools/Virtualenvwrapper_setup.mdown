@@ -1,7 +1,7 @@
 Title: Virtualenvwrapper 安裝與使用
 Date: 2014-07-27 17:31
 Author: Richo
-Tags: Virtualenv, Virtualenvwrapper, Python, OS X
+Tags: virtualenv, virtualenvwrapper, python, os x
 Category: Tools
 Summary: Setup of virtualenvwrapper for virtualenv
 

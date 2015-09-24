@@ -1,7 +1,7 @@
 Title: 部署 Django 到 Heroku
 Date: 2014-03-28 18:23
 Author: Richo
-Tags: Django, Heroku, Python
+Tags: django, heroku, python
 Category: Web Development
 Summary: A tutorial about how to get Django work on Heroku
 

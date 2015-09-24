@@ -1,7 +1,7 @@
 Title: Cafe Recommendation
 Date: 2014-03-01 21:35
 Author: Richo
-Tags: Cafe, Map, Recommendation, Food
+Tags: cafe, map, recommendation, food
 Category: Others
 Summary: A map for cafe located at where I lived.
 
@@ -12,9 +12,9 @@ Summary: A map for cafe located at where I lived.
 C for chat: 適不適合聊天聚餐  
 P for Papers:  適不適合待在那邊看paper, coding  
 C/P 性價比:  個人主觀給分XD  
-  
+
 ***
-  
+
 ###台北 Taipei  
 ####路燈咖啡  
 C：★★★★☆  
@@ -25,9 +25,9 @@ Wifi：有
 P.S.人多會請讓座位，位置不大  
 地址：台北市中正區羅斯福路三段244巷10弄19號  
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3615.5290176935214!2d121.531526!3d25.016115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a98b8638f9ab%3A0x15959d67ac82f6b0!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A576F5pav56aP6Lev5LiJ5q61MjQ05be3MTDlvIQxOeiZnw!5e0!3m2!1szh-TW!2stw!4v1393682006574" width="400" height="300" frameborder="0" style="border:0"></iframe>  
-  
+
 ***
-  
+
 ####Market Place 市集  
 C：★★★★☆  
 P：★☆☆☆☆  
@@ -36,9 +36,9 @@ Wifi：有
 點過：總匯三明治  
 地址：台北市中正區重慶南路一段1號2樓  
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.6223246764903!2d121.513386!3d25.046888000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a90d2569751f%3A0x13f004b35c037895!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A6YeN5oW25Y2X6Lev5LiA5q61MeiZnw!5e0!3m2!1szh-TW!2stw!4v1393681869681" width="400" height="300" frameborder="0" style="border:0"></iframe>  
-  
+
 ***
-  
+
 ####NOTCH咖啡工場站前店  
 C：★★★★☆  
 P：★★★☆☆  
@@ -61,9 +61,9 @@ Wifi：有
 P.S.餐點選擇性不高  
 地址：新竹市東區建美路5號  
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905.4567212289267!2d120.99739443981397!3d24.80138070578696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836721fea591b%3A0xb4849e27fe0f6b0e!2zMzAw5paw56u55biC5p2x5Y2A5bu6576O6Lev!5e0!3m2!1szh-TW!2stw!4v1393680712876" width="400" height="300" frameborder="0" style="border:0"></iframe>  
-  
+
 ***
-  
+
 ####鮭魚咖啡  
 C：★★★★☆  
 P：★☆☆☆☆  
@@ -71,7 +71,7 @@ C/P：★★☆☆☆
 Wifi：？  
 地址：新竹市北區勝利路312號  
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3621.7985710569606!2d120.96370199999998!3d24.80235!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346835953ba1d3f7%3A0xbc2df50c41a7683f!2zMzAw5paw56u55biC5YyX5Y2A5Yud5Yip6LevMzEy6Jmf!5e0!3m2!1szh-TW!2stw!4v1393681621792" width="400" height="300" frameborder="0" style="border:0"></iframe>  
-  
+
 ***
 
 ####馬雅咖啡  
@@ -83,7 +83,7 @@ Wifi：有
 P.S.空間有點狹小，插座不太夠  
 地址：新竹市北區中正路485巷4號  
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3621.4067478724646!2d120.9581!3d24.815759999999997!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346835ba0f320c2d%3A0x36ce18485113878e!2zMzAw5paw56u55biC5YyX5Y2A5Lit5q2j6LevNDg15be3NOiZnw!5e0!3m2!1szh-TW!2stw!4v1393681682501" width="400" height="300" frameborder="0" style="border:0"></iframe>  
-  
+
 ***
 
 ###台南 Tainan  
@@ -96,9 +96,9 @@ Wifi：有
 P.S.以時計費，顯得有點貴，不過空間大，相對起來環境舒適，去兩次都不太吵雜  
 地址：台南市南區西門路一段607號3樓  
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3673.0482267752086!2d120.19738399999999!3d22.985253999999998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e76796cd16c95%3A0x1b78fbf024320865!2zNzAy5Y-w5Y2X5biC5Y2X5Y2A6KW_6ZaA6Lev5LiA5q61NjA36Jmf!5e0!3m2!1szh-TW!2stw!4v1393681500681" width="400" height="300" frameborder="0" style="border:0"></iframe>  
-  
+
 ***
-  
+
 ###未去清單  
 +[在樹上](http://blog.roodo.com/kayu/archives/25422850.html)  
 +[布蕾咖啡](https://plus.google.com/116499515700939114510/about?gl=tw&hl=zh-TW)  

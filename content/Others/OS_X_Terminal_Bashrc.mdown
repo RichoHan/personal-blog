@@ -1,7 +1,7 @@
 Title: 設定 OS X Terminal 下的 .bashrc
 Date: 2014-03-09 14:49
 Author: Richo
-Tags: OS X, bashrc
+Tags: os x, bashrc
 Category: Others
 Summary: Setting .bashrc under OS X terminal
 

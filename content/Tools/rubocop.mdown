@@ -1,0 +1,53 @@
+Title: 解決linter-rubocop在Atom會出現的error message
+Date: 2015-09-26 02:00
+Author: Richo
+Tags: atom, rubocop, linter, soa
+Category: Tools
+Summary: Solution for Rubocop error.
+
+###前言
+
+linter-rubocop是Atom的package，可以幫忙檢查寫Ruby時的coding style有沒有符合規定，安裝方式詳見reference。
+
+***
+
+###Error
+
+```zsh
+Error: env: ruby_executable_hooks: No such file or directory
+	at /Users/username/.atom/packages/linter-rubocop/index.coffee:18:15
+```
+***
+
+###Solution
+
+按照官方的設定教學，我們在搜尋rubocop的path時會出現：
+
+```zsh
+which rubocop
+# /Users/username/.rvm/gems/ruby-2.2.1/bin/rubocop
+```
+
+導致，Atom的設定會變成：
+
+```zsh
+'linter-rubocop':
+	'executablePath': '/Users/username/.rvm/gems/ruby-2.2.1/bin/rubocop'
+```
+
+此時換成：
+
+```zsh
+'linter-rubocop':
+	# Replace 'bin' to 'wrappers'
+	'executablePath': '/Users/username/.rvm/gems/ruby-2.2.1/wrappers/rubocop'
+```
+
+重啟Atom，便不會再出現error message。
+
+***
+
+###Reference
+
++[linter-rubocop](https://atom.io/packages/linter-rubocop)  
++[Linter can't find env: ruby_executable_hooks](https://github.com/AtomLinter/linter-scss-lint/issues/68#issuecomment-137231010)

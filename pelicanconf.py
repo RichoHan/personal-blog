@@ -61,7 +61,6 @@ LINKS = [
 NEST_COPYRIGHT = u'&copy; Richo 2015'
 
 # index.html
-NEST_INDEX_HEAD_TITLE = u''
 NEST_INDEX_HEADER_TITLE = u'Hi, this is Richo'
 NEST_INDEX_HEADER_SUBTITLE = u'Journal for coding stuff'
 NEST_INDEX_CONTENT_TITLE = u'Last Updates'
